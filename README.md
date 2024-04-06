@@ -1,2 +1,3 @@
 # not-very-useful
-Just some brilliant ideas 
+
+Silly and pointless apps that I made when I had nothing better to do c:
