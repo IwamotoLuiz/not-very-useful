@@ -11,17 +11,6 @@ def roll_d20():
         return 0
 
 
-def colors(color):
-    if color == 'red':
-        return '\033[91m'
-    elif color == 'yellow':
-        return '\033[93m'
-    elif color == 'green':
-        return '\033[92m'
-    elif color == 'default':
-        return '\033[0m'
-
-
 def nope():
     denial_messages = [
         "Not in the mood...",
@@ -104,7 +93,7 @@ def nope():
         "I don't think I'll be able to go along with that right now",
         "I don't think that's something I can commit to at the moment"
     ]
-    print(f'\n>{colors("red")} {denial_messages[randint(0, 77)]} {colors("default")}')
+    print(f'\n> {denial_messages[randint(0, 77)]}')
 
 
 def yep():
@@ -120,7 +109,7 @@ def yep():
         "Okay, but DO NOT expect me to be happy",
         "Fine, I give in"
     ]
-    print(f'\n>{colors("green")} {acceptance_messages[randint(0, 8)]} {colors("default")}')
+    print(f'\n> {acceptance_messages[randint(0, 8)]}')
 
 
 def exit_on_esc():
@@ -133,11 +122,11 @@ def exit_on_esc():
         else:
             yep()
             time.sleep(3)
-            print(f'\n{colors("yellow")}THE SYSTEM IS SHUTTING DOWN', end='', flush=True)
+            print(f'\nTHE SYSTEM IS SHUTTING DOWN', end='', flush=True)
             for i in range(1, randint(5, 60)):
                 print('.', end='', flush=True)
                 time.sleep(1)
-            print(f'\n\n{colors("default")}> Still there?')
+            print(f'\n\n> Still there?')
             keyboard.wait('esc')
             print('\n> Fuck.')
             break
